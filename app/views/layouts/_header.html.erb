@@ -1,0 +1,9 @@
+<header>
+  <div class="profile-links">
+    <% if user_signed_in? %>
+      <%= link_to 'My Profile' %>
+    <% else %>
+      <%= link_to 'Register', new_user_registration_path %>
+    <% end %>
+  </div>
+</header>
