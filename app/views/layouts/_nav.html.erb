@@ -1,3 +1,21 @@
-<div class="nav-bar">
-  
-</div>
+<header>
+  <div class="top-bar">
+    <div class="profile-links">
+      <% if user_signed_in? %>
+      <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= link_to 'Log In', new_user_session_path %>
+      <%= link_to 'Register', new_user_registration_path %>
+      <% end %>
+    </div>
+    <div class="site-title">
+      <%= link_to "Classy Colorado", root_path %>
+    </div>
+  </div>
+  <nav>
+    <h5>link</h5>
+    <h5>link</h5>
+    <h5>link</h5>
+    <h5>link</h5>
+  </nav>
+</header>
