@@ -4,7 +4,7 @@ feature 'Admin' do
   context 'from the posts path' do
     before(:each) do
       DatabaseCleaner.clean
-      create_list(:post, 30)
+      @posts = create_list(:post, 30)
     end
 
     after(:each) do
@@ -18,7 +18,7 @@ feature 'Admin' do
       visit posts_path
 
       expect(page).to have_content(@posts.first.title)
-      expect(page).to have_content(@posts.first.author)
+      expect(page).to have_content(@posts.first.author.email)
 
       expect(page).to have_content(@posts[14].title)
       expect(page).to have_content(@posts.last.title)
