@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: %w[default admin]
+
+  has_many :posts, class_name: "Post", foreign_key: "author", dependent: :destroy
 end

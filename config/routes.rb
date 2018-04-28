@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :posts, only: %i[index show]
+
+  namespace :admin do
+    resources :posts, only: %i[create new edit update destroy]
+  end
 end
