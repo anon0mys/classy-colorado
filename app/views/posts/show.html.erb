@@ -1,0 +1,8 @@
+<% if current_admin? %>
+  <%= link_to 'Edit', edit_admin_post_path(@post) %>
+  <%= button_to 'Delete', admin_post_path(@post), method: :delete %>
+<% end %>
+
+<%= @post.title %>
+<%= @post.author.email %>
+<%= @post.body %>
