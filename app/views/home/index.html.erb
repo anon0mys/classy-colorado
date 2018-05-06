@@ -1,9 +1,11 @@
 <div class='home'>
   <div class='articles'>
-    <div class="article">
-    </div>
-    <div class="article">
-    </div>
+    <% @featured_posts.each do |post| %>
+      <div class="article">
+        <%= link_to post.title, post_path(post) %>
+        <%= post.body.truncate_words(20) %>
+      </div>
+    <% end %>
   </div>
   <aside class="right-bar">
     <h6>About Us</h6>
