@@ -1,12 +1,10 @@
 require 'rails_helper'
 
-feature 'Admin' do
-  context 'from the posts path' do
+feature 'Post CRUD' do
+  context 'all users' do
     before(:each) do
       DatabaseCleaner.clean
       @posts = create_list(:post, 30)
-      admin = create(:admin)
-      sign_in admin
     end
 
     after(:each) do
@@ -36,7 +34,7 @@ feature 'Admin' do
     end
   end
 
-  context 'from the admin namespaced posts path' do
+  context 'an Admin' do
     before(:each) do
       DatabaseCleaner.clean
       admin = create(:admin)

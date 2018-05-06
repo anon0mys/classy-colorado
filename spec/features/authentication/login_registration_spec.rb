@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Visitor' do
-  context 'from the root path' do
+feature 'Authentication' do
+  context 'a visitor' do
     scenario 'can register for an account' do
       visit root_path
 
